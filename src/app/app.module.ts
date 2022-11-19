@@ -13,6 +13,10 @@ import { InfoFormComponent } from './carteVisite/info-form/info-form.component';
 import { CarteComponent } from './carteVisite/carte/carte.component';
 import { EmbaucheComponent } from './cvTech/embauche/embauche.component';
 import { DefaultImagePipe } from './cvTech/default-image.pipe';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,14 @@ import { DefaultImagePipe } from './cvTech/default-image.pipe';
     EmbaucheComponent,
     DefaultImagePipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, 
+    AppRoutingModule,
+     FormsModule,
+     ReactiveFormsModule,
+     CommonModule,
+     BrowserAnimationsModule, // required animations module
+     ToastrModule.forRoot(), // ToastrModule added
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })
